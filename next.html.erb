@@ -1,0 +1,16 @@
+<a href="mycontroller/home" id="write"  ><button class="scribButton">Scribble</button></a>
+<% for stud in @allNews -%> 
+<fieldset class="posts">
+	<b><%= stud.name %></b>  <br>
+	<B>Topic:</B> <%= stud.title %> <br>
+	<form method="get" action="/mycontroller/read">
+		<input type="hidden"  name="user"  value=<%=stud.name  %>  >
+		<input type="hidden" name="head"value=<%=stud.title  %> >
+		<input type="hidden" name="news" value=<%=stud.news  %>>
+		<input type="hidden" name="mail" value=<%=stud.mail  %>>
+		<input type="submit" name="submit" class="readButton" value="Read">
+	</form>
+</fieldset>
+<br> <br>
+<% end -%>
+	
